@@ -3,7 +3,8 @@
   <div class="article-item">
     <div class="title">{{article.title}}</div>
     <!-- <div class="image" slot="img"> -->
-    <van-image slot="icon" width="100" height="100" src="https://img01.yzcdn.cn/vant/cat.jpeg" />
+    <van-image class="img" v-if="article.thumbnail_pic_s02"  width="150" height="120" :src="article.thumbnail_pic_s02" />
+    <van-image class="img" v-if="article.thumbnail_pic_s03" width="150" height="120"  :src="article.thumbnail_pic_s03" />
     <!-- </div> -->
     <div class="label">
       <div>
@@ -12,6 +13,7 @@
 
       </div>
     </div>
+    <div class="line"></div>
   </div>
 </template>
 
@@ -41,11 +43,30 @@ export default {
     padding: 0 32px;
         .title{
             margin: 20px 0;
-            font-size: 32px;
+            font-size: 36px;
             color: #323233;
         width: 100%;
         text-align: left;
 
+    }
+    .img{
+      margin: 0 28px;
+    }
+    .label{
+      font-size: 28px;
+      display: flex;
+      justify-content: flex-start;
+      span{
+        color: #bfbfbf;
+        text-align: left;
+        margin-right: 20px;
+      }
+    }
+    .line{
+      margin: 20px 0;
+      height: 1px;
+      width: 100%;
+      background: #f5f6f8;
     }
 
 }
